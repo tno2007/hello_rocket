@@ -11,11 +11,11 @@ fn hello(name: &str) -> String {
 }
 
 #[get("/<name>/<age>")]
-fn helloMultiple(name: &str, age: u8) -> String {
+fn hello_multiple(name: &str, age: u8) -> String {
     format!("Hello, {} year old named {}!", age, name)
 }
 
 #[launch]
 fn rocket() -> _ {
-    rocket::build().mount("/", routes![index, hello, helloMultiple])
+    rocket::build().mount("/", routes![index, hello, hello_multiple])
 }
